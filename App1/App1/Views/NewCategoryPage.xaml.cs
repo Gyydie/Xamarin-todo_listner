@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App1.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,14 @@ namespace App1.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NewCategoryPage : ContentPage
     {
+
+        private NewCategoryViewModel _categoryViewModel = new NewCategoryViewModel();
+
+
         public NewCategoryPage()
         {
             InitializeComponent();
+            BindingContext = _categoryViewModel;
         }
     }
 }
