@@ -1,23 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="App1.Views.NewCategoryPage">
+             x:Class="App1.Views.NewCategoryPage"
+             Background="#2b2b2f">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Titel" FontSize="Medium" />
-            <Entry Text="{Binding Titel, Mode=TwoWay}" FontSize="Medium" />
+        <StackLayout Spacing="3" Padding="15">
+            <Label Text="Titel" FontSize="Medium" TextColor="{StaticResource TextBlack}"/>
+            <Entry Text="{Binding Title, Mode=TwoWay}" FontSize="Medium" TextColor="{StaticResource TextBlack}"/>
 
-            <Label Text="Description" FontSize="Medium" />
+            <Label Text="Description" FontSize="Medium" TextColor="{StaticResource TextBlack}"/>
             <Editor Text="{Binding Description, Mode=TwoWay}" 
-                    AutoSize="TextChanges" FontSize="Medium" Margin="0" />
+                    AutoSize="TextChanges" FontSize="Medium" Margin="0" TextColor="{StaticResource TextBlack}"/>
 
-            <Label Text="Success Rate" FontSize="Medium" />
+            <Label Text="Success Rate" FontSize="Medium" TextColor="{StaticResource TextBlack}"/>
             <Editor Text="{Binding SuccessRate, Mode=TwoWay}" 
-                    AutoSize="TextChanges" FontSize="Medium" Margin="0" />
+                    AutoSize="TextChanges" FontSize="Medium" Margin="0" TextColor="{StaticResource TextBlack}"/>
 
             <StackLayout Orientation="Horizontal">
-                <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
-                <Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
+                <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand" Background="{StaticResource ButtonBB}"></Button>
+                <Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand" Background="{StaticResource ButtonBB}"></Button>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

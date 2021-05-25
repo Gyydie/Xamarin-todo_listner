@@ -11,13 +11,10 @@ namespace App1.ViewModels
     [QueryProperty(nameof(ItemId), nameof(ItemId))]
     public class NewCategoryViewModel : BaseViewModel
     {
-        public Command SaveCommand { get; }
-        public Command CancelCommand { get; }
-
-        private int itemId;
+        private string itemId;
         private string title;
         private string description;
-        private float  successRate = 50f;
+        private float successRate = 50f;
         public int IdCategory { get; set; }
 
         public string Title
@@ -38,7 +35,7 @@ namespace App1.ViewModels
             set => SetProperty(ref successRate, value);
         }
 
-        public int ItemId
+        public string ItemId
         {
             get
             {
@@ -47,7 +44,7 @@ namespace App1.ViewModels
             set
             {
                 itemId = value;
-                LoadItemId(value);
+                LoadItemId(Int32.Parse(value));
             }
         }
 
@@ -56,14 +53,12 @@ namespace App1.ViewModels
         {
             SaveCommand = new Command(OnSave, ValidateSave);
             CancelCommand = new Command(OnCancel);
-            this.PropertyChanged +=
-                (_, __) => SaveCommand.ChangeCanExecute();
+            this.PropertyChanged += (_, __) => SaveCommand.ChangeCanExecute();
         }
 
         private bool ValidateSave()
         {
-            return !String.IsNullOrWhiteSpace(title)
-                && !String.IsNullOrWhiteSpace(description);
+            return !String.IsNullOrWhiteSpace(title) && !String.IsNullOrWhiteSpace(description);
         }
 
 
@@ -83,6 +78,8 @@ namespace App1.ViewModels
             }
         }
 
+        public Command SaveCommand { get; }
+        public Command CancelCommand { get; }
 
         private async void OnCancel()
         {
@@ -94,14 +91,18 @@ namespace App1.ViewModels
         private async void OnSave()
         {
             var categoriesList = await DataStoreCategories.GetItemsAsync();
-            var curMaxId = categoriesList.Max(x => x.Id);
+            int curMaxId = -1;
+            if(categoriesList.Count()>0)
+            {
+                curMaxId = categoriesList.Max(x => x.Id);
+            }
             Category newCategory = new Category()
             {
                 Id = curMaxId + 1,
                 Title = Title,
                 Description = Description,
                 SuccessRate = successRate
-        };
+            };
 
             await DataStoreCategories.AddItemAsync(newCategory);
 

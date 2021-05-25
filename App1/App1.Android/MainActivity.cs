@@ -14,6 +14,8 @@ namespace App1.Droid
         {
             base.OnCreate(savedInstanceState);
 
+            Xamarin.Forms.Forms.SetFlags("SwipView_Experimental");
+
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());

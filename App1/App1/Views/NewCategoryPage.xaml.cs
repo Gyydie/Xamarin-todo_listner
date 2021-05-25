@@ -14,13 +14,13 @@ namespace App1.Views
     public partial class NewCategoryPage : ContentPage
     {
 
-        private NewCategoryViewModel _categoryViewModel = new NewCategoryViewModel();
+        private NewCategoryViewModel _categoryViewModel;
 
 
         public NewCategoryPage()
         {
             InitializeComponent();
-            BindingContext = _categoryViewModel;
+            BindingContext = _categoryViewModel = new NewCategoryViewModel();
         }
     }
 }

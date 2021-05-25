@@ -17,6 +17,10 @@ namespace App1.ViewModels
         public Command AddItemCommand { get; }
         public Command<Item> ItemTapped { get; }
 
+        public Command OpenSettingsPageCommand { get; }
+
+        public INavigation Navigation { get; set; }
+
         public ItemsViewModel()
         {
             Title = "Browse";
@@ -26,6 +30,8 @@ namespace App1.ViewModels
             ItemTapped = new Command<Item>(OnItemSelected);
 
             AddItemCommand = new Command(OnAddItem);
+
+            OpenSettingsPageCommand = new Command(OpenSettingsPage);
         }
 
         async Task ExecuteLoadItemsCommand()
@@ -79,6 +85,12 @@ namespace App1.ViewModels
 
             // This will push the ItemDetailPage onto the navigation stack
             await Shell.Current.GoToAsync($"{nameof(ItemDetailPage)}?{nameof(ItemDetailViewModel.ItemId)}={item.Id}");
+        }
+
+        private async void OpenSettingsPage()
+        {
+            Navigation.PushAsync(new SettingsPage());
+            //await Shell.Current.GoToAsync(nameof(SettingsPage));
         }
     }
 }

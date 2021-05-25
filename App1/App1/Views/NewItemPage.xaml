@@ -5,37 +5,39 @@
              Shell.PresentationMode="ModalAnimated"
              Title="New Item"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
-             ios:Page.UseSafeArea="true">
+             ios:Page.UseSafeArea="true"
+             Background="#2b2b2f">
     <ContentPage.Content>
+
         <StackLayout Spacing="3" Padding="15">
-            
-            
-            <Label Text="Text" FontSize="Medium" />
-            <Entry Text="{Binding Text, Mode=TwoWay}" FontSize="Medium" />
-            
-            
-            <Label Text="Description" FontSize="Medium" />
+
+
+            <Label Text="Text" FontSize="Medium" TextColor="#ffedd4" />
+            <Entry Text="{Binding Text, Mode=TwoWay}" FontSize="Medium" TextColor="#ffedd4"/>
+
+
+            <Label Text="Description" FontSize="Medium" TextColor="#ffedd4"/>
             <Editor Text="{Binding Description, Mode=TwoWay}" 
-                    AutoSize="TextChanges" FontSize="Medium" Margin="0" />
+                    AutoSize="TextChanges" FontSize="Medium" Margin="0" TextColor="#ffedd4"/>
 
 
-            <Label Text="Date" FontSize="Medium" />
-            <DatePicker x:Name="DatePikerDate" DateSelected="DatePikerDate_OnDateSelected" />
+            <Label Text="Date" FontSize="Medium" TextColor="#ffedd4"/>
+            <DatePicker x:Name="DatePikerDate" DateSelected="DatePikerDate_OnDateSelected" TextColor="#ffedd4"/>
 
 
-            <Label Text="Importance" FontSize="Medium" />
+            <Label Text="Importance" FontSize="Medium" TextColor="#ffedd4"/>
             <Editor Text="{Binding Importance, Mode=TwoWay}" 
-                    AutoSize="TextChanges" FontSize="Medium" Margin="0" />
+                    AutoSize="TextChanges" FontSize="Medium" Margin="0" TextColor="#ffedd4"/>
 
 
-            <Label Text="Category" FontSize="Medium" />
+            <Label Text="Category" FontSize="Medium" TextColor="#ffedd4"/>
             <Picker x:Name="PickerCategory"  SelectedItem="{Binding Category,  Mode=TwoWay}"
-                    SelectedIndexChanged="picker_SelectedIndexChanged" />
+                    SelectedIndexChanged="picker_SelectedIndexChanged" TextColor="#ffedd4"/>
 
 
             <StackLayout Orientation="Horizontal">
-                <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
-                <Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
+                <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand" Background="{StaticResource ButtonBB}"></Button>
+                <Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand" Background="{StaticResource ButtonBB}"></Button>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

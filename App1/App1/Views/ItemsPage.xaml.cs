@@ -21,6 +21,9 @@ namespace App1.Views
             InitializeComponent();
 
             BindingContext = _viewModel = new ItemsViewModel();
+
+            var settingViewModel = new SettingsViewModel();
+            settingViewModel.LoadSettings();
         }
 
         protected override void OnAppearing()

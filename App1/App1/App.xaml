@@ -27,6 +27,30 @@
                     </VisualStateGroupList>
                 </Setter>
             </Style>
+
+            <Color x:Key="PrimaryBlack">#82663f</Color>
+            <Color x:Key="TextBlack">#ffedd4</Color>
+            <Color x:Key="StateBlack">#624927</Color>
+
+
+            <LinearGradientBrush x:Key="ButtonBB" StartPoint="0,0" EndPoint="0,0.9">
+                <GradientStop Color="#a18969" Offset="0.01" />
+                <GradientStop Color="#82663f" Offset="0.06" />
+                <GradientStop Color="#715939" Offset="1.0" />
+            </LinearGradientBrush>
+
+            <LinearGradientBrush x:Key="BackgroundFon" StartPoint="0,0" EndPoint="0,0.9">
+                <GradientStop Color="#626361" Offset="0.02" />
+                <GradientStop Color="#36363a" Offset="0.6" />
+                <GradientStop Color="#2b2b2f" Offset="1.0" />
+            </LinearGradientBrush>
+
+            <LinearGradientBrush x:Key="FlyoutBB" StartPoint="0,0" EndPoint="0,0.9">
+                <GradientStop Color="#a18969" Offset="0.01" />
+                <GradientStop Color="#82663f" Offset="0.06" />
+                <GradientStop Color="#715939" Offset="1.0" />
+            </LinearGradientBrush>
+
         </ResourceDictionary>        
     </Application.Resources>
 </Application>
