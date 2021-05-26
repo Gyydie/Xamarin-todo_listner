@@ -13,5 +13,11 @@ namespace App1.Models
         public int Importance { get; set; } = 50;
 
         public string Category { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            Item item = obj as Item;
+            return this.Id == item.Id;
+        }
     }
 }

@@ -87,10 +87,10 @@ namespace App1.ViewModels
             await Shell.Current.GoToAsync($"{nameof(ItemDetailPage)}?{nameof(ItemDetailViewModel.ItemId)}={item.Id}");
         }
 
-        private async void OpenSettingsPage()
+        private async void OpenSettingsPage(object obj)
         {
-            Navigation.PushAsync(new SettingsPage());
-            //await Shell.Current.GoToAsync(nameof(SettingsPage));
+            //Navigation.PushAsync(new SettingsPage());
+            await Shell.Current.GoToAsync(nameof(SettingsPage));
         }
     }
 }

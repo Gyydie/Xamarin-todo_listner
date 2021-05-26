@@ -10,10 +10,11 @@ using Xamarin.Forms.Xaml;
 
 namespace App1.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
+    //[XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SettingsPage : ContentPage
     {
-        private SettingsViewModel _settingsViewModel;
+        SettingsViewModel _settingsViewModel;
+
         public SettingsPage()
         {
             InitializeComponent();

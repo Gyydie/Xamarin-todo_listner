@@ -38,7 +38,7 @@ namespace App1.Views
                 {
                     categoriesTitle.Add(category.Title);
                 }
-                
+
                 PickerCategory.ItemsSource = categoriesTitle;
 
                 if (categoriesTitle.Count > 0)

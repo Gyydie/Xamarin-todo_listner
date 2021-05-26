@@ -13,7 +13,7 @@ namespace App1
         {
             InitializeComponent();
 
-            DependencyService.Register<DataStoreItems>();
+            DependencyService.Register<DataStoreWebItems>();
             DependencyService.Register<DataStoreCategories>();
             MainPage = new AppShell();
         }
