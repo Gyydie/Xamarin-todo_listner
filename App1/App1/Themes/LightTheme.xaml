@@ -1,12 +1,12 @@
 ﻿<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                     x:Class="App1.Themes.LightTheme">
-    <Color x:Key="PageBackgroundColor">Green</Color>
+    <Color x:Key="PageBackgroundColor">#a18969</Color>
     <Color x:Key="NavigationBarColor">WhiteSmoke</Color>
     <Color x:Key="PrimaryColor">WhiteSMoke</Color>
     <Color x:Key="SecondaryColor">Black</Color>
     <Color x:Key="PrimaryTextColor">Black</Color>
-    <Color x:Key="SeondaryTextColor">White</Color>
-    <Color x:Key="TertiaryTextColor">Gray</Color>
+    <Color x:Key="SeondaryTextColor">#2b2b2f</Color>
+    <Color x:Key="TertiaryTextColor">#2b2b2f</Color>
     <Color x:Key="TransparentColor">Transparent</Color>
 </ResourceDictionary>

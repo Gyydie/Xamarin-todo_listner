@@ -10,16 +10,17 @@ using Xamarin.Forms.Xaml;
 
 namespace App1.Views
 {
-    //[XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SettingsPage : ContentPage
     {
-        SettingsViewModel _settingsViewModel;
+        private SettingsViewModel _settingsViewModel;
 
         public SettingsPage()
         {
             InitializeComponent();
             BindingContext = _settingsViewModel = new SettingsViewModel();
         }
+
+
 
         private void OnPickerSelectionChanged(object sender, EventArgs e)
         {
